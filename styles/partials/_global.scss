@@ -1,19 +1,22 @@
 @use "./variables";
 @font-face {
-    font-family: "Avenir-regular";
-    src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
+    font-family: "Avenir";
+    src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("otf");
+    font-weight: 400;
 }
 @font-face {
-    font-family: "Avenir-demi";
-    src: url("../../assets/Font/AvenirNextLTPro-Demi.otf");
+    font-family: "Avenir";
+    src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("otf");
+    font-weight: 600;
 }
 @font-face {
-    font-family: "Avenir-bold";
-    src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
+    font-family: "Avenir";
+    src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf");
+    font-weight: 700;
 }
 *{
     box-sizing: border-box;
-    font-family: "Avernir-regular";
+    font-family: "Avernir";
 }
 .primary-nav{
     display: flex;
