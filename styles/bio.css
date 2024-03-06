@@ -13,12 +13,12 @@
   src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf");
   font-weight: 700;
 }
-.page-header, .hero__heading {
+.page-header {
   font-size: 3.75rem;
   line-height: 4.25rem;
   font-weight: 700;
 }
-.page-header--m {
+.page-header--m, .hero__heading {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: bold;
@@ -29,7 +29,7 @@
   line-height: 2.75rem;
   font-weight: 700;
 }
-.section-header--m {
+.section-header--m, .about__heading, .photo-gallery__heading {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -40,7 +40,7 @@
   line-height: 2rem;
   font-weight: 600;
 }
-.sub-header--m, .primary-nav__heading {
+.sub-header--m, .about__heading__band, .primary-nav__heading {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -51,7 +51,7 @@
   line-height: 1.475rem;
   font-weight: 400;
 }
-.body-copy--m {
+.body-copy--m, .about__quote {
   font-size: 0.813rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -118,7 +118,7 @@
   width: 100%;
   text-decoration: none;
   color: #E1E1E1;
-  padding: 1.8rem 0rem;
+  padding: 1rem 0rem;
 }
 .primary-nav__link--active {
   color: #FFFFFF;
@@ -150,7 +150,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0rem;
-  height: 300px;
+  height: 250px;
 }
 .hero__layer {
   width: 100%;
@@ -162,4 +162,44 @@
 .hero__heading {
   margin: 0rem;
   color: #FFFFFF;
+  padding-left: 1rem;
+}
+
+.about {
+  padding: 1.5rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.about__heading {
+  margin: 0rem;
+  margin-bottom: 1rem;
+}
+.about__img {
+  width: 100%;
+}
+.about__quote {
+  font-weight: 700;
+  margin-bottom: 0rem;
+}
+.about__heading__band {
+  padding: 1.5rem 0rem 1rem;
+  margin: 0rem;
+}
+
+.photo-gallery {
+  padding: 1.5rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #FAFAFA;
+}
+.photo-gallery__heading {
+  margin: 0rem 0rem 1rem;
+}
+.photo-gallery__container {
+  display: flex;
+  flex-direction: column;
+}
+.photo-gallery__img {
+  width: 100%;
+  padding-bottom: 1rem;
 }/*# sourceMappingURL=bio.css.map */
