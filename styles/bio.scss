@@ -9,11 +9,25 @@
     background-repeat: no-repeat;
     margin: 0rem;
     height: 300px;
-    display: flex;
-    align-items: center;
+
+    &__layer{
+        width: 100%;
+        height: 100%;
+        background-color: variables.$bs-black-overlay;
+        display: flex;
+        align-items: center;
+    }
     &__heading{
         @extend .page-header;
         margin: 0rem;
         color: variables.$white;
     }
+}
+
+@include mediaQuery.tablet{
+
+}
+
+@include mediaQuery.desktop{
+
 }
