@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf");
+  font-weight: 700;
+}
+.page-header, .hero__heading {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  font-weight: 700;
+}
+.page-header--m {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+.section-header {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+}
+.section-header--m {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.sub-header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+.sub-header--m, .primary-nav__heading {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+.body-copy {
+  font-size: 0.875rem;
+  line-height: 1.475rem;
+  font-weight: 400;
+}
+.body-copy--m {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+.footer-copy--m {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+.label-text, .button-text {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+.label-text--m, .button-text--m {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Avenir";
+}
+
+.primary-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #323232;
+  color: #FFFFFF;
+}
+.primary-nav__heading {
+  text-transform: uppercase;
+  max-width: 7.5rem;
+  max-height: 1.25rem;
+}
+.primary-nav__list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  width: 100%;
+  padding: 0rem;
+  color: #FFFFFF;
+  margin: 0rem;
+}
+.primary-nav__item {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.primary-nav__link {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #E1E1E1;
+  padding: 1.8rem 0rem;
+}
+.primary-nav__link--active {
+  color: #FFFFFF;
+  border-bottom: 4px solid #FFFFFF;
+}
+.primary-nav__link:hover {
+  border-bottom: 4px solid #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  .primary-nav {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .primary-nav__heading {
+    margin: 0rem 2rem;
+  }
+  .primary-nav__list {
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+  }
+  .primary-nav__item {
+    width: auto;
+  }
+}
+.hero {
+  background-image: url("../assets/Images/hero-bio.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0rem;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+.hero__heading {
+  margin: 0rem;
+  color: #FFFFFF;
+}/*# sourceMappingURL=bio.css.map */

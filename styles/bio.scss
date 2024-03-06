@@ -1,1 +1,19 @@
 @use "./partials/global";
+@use "./partials/font";
+@use "./partials/variables";
+@use "./partials/media-query" as mediaQuery;
+
+.hero{
+    background-image: url("../assets/Images/hero-bio.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0rem;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    &__heading{
+        @extend .page-header;
+        margin: 0rem;
+        color: variables.$white;
+    }
+}

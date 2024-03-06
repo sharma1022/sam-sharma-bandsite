@@ -7,7 +7,7 @@
 }
 
 @mixin desktop{
-    @media screen and(min-width:variables.$desktop-breakpoint) {
+    @media screen and (min-width:variables.$desktop-breakpoint) {
         @content;
     }
 }
