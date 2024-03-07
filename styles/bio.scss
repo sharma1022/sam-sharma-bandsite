@@ -72,8 +72,20 @@
 
 @include mediaQuery.tablet{
     .hero{
+        height: 400px;
         &__heading{
             @include fontStyle.page-header(large);
+            padding: 0rem 2rem;
+        }
+    }
+    .about{
+        padding: 0rem 2rem;
+        &__heading{
+            @include fontStyle.section-header(large);
+            margin-top: 3rem;
+        }
+        &__img{
+            width: 80%;
         }
     }
 }

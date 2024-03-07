@@ -222,9 +222,25 @@ html, body {
 }
 
 @media screen and (min-width: 768px) {
+  .hero {
+    height: 400px;
+  }
   .hero__heading {
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
+    padding: 0rem 2rem;
+  }
+  .about {
+    padding: 0rem 2rem;
+  }
+  .about__heading {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    margin-top: 3rem;
+  }
+  .about__img {
+    width: 80%;
   }
 }/*# sourceMappingURL=bio.css.map */
