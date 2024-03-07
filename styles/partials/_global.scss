@@ -7,7 +7,10 @@
     font-family: "Avenir";
 }
 
-
+.logo{
+    max-width: 7.5rem;
+    max-height: 1.25rem;
+}
 .primary-nav{
     display: flex;
     flex-direction: column;
@@ -58,7 +61,57 @@
         }
     }
 }
+.footer{
+    background-color: variables.$bs-black;
+    color: variables.$white;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
 
+    &__heading{
+        @extend .section-header--m;
+        margin: 0;
+    }
+    &__container{
+        display: flex;
+        margin-top: 1.5rem;
+    }
+    &__icon{
+        height: 1.5rem;
+        padding-right: 2rem;
+    }
+    .company{
+        display: flex;
+        flex-direction: column;
+
+        &__container{
+            display: flex;
+            flex-direction: column;
+        }
+        &__heading{
+            @extend .sub-header--m;
+            margin: 1.5rem 0rem 0rem;
+        }
+        &__text{
+            @extend .footer-copy--m;
+            margin: 1.5rem 0rem 0rem;
+        }
+        &__email{
+            @extend .footer-copy--m;
+            text-decoration: none;
+            color: variables.$white;
+            margin: 1.5rem 0rem 0rem;
+        }
+    }
+    &__logo{
+        @extend .logo;
+        margin-top: 3rem;
+    }
+    &__text{
+        @extend .footer-copy--m;
+        margin: 1.5rem 0rem 0rem;
+    }
+}
 @include mediaQuery.tablet{
     .primary-nav{
         flex-direction: row;
