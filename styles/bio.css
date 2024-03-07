@@ -13,78 +13,13 @@
   src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf");
   font-weight: 700;
 }
-.page-header {
-  font-size: 3.75rem;
-  line-height: 4.25rem;
-  font-weight: 700;
-}
-.page-header--m, .hero__heading {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: bold;
-}
-
-.section-header {
-  font-size: 2.25rem;
-  line-height: 2.75rem;
-  font-weight: 700;
-}
-.section-header--m, .about__heading, .photo-gallery__heading, .footer__heading {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
-.sub-header {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
-}
-.sub-header--m, .about__heading__band, .primary-nav__heading, .footer .company__heading {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-}
-
-.body-copy {
-  font-size: 0.875rem;
-  line-height: 1.475rem;
-  font-weight: 400;
-}
-.body-copy--m, .about__quote {
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.footer-copy {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-.footer-copy--m, .footer .company__text, .footer .company__email, .footer__text {
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.label-text, .button-text {
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-}
-.label-text--m, .button-text--m {
-  font-size: 0.625rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-}
-
-* {
+html, body {
   box-sizing: border-box;
   font-family: "Avenir";
+  margin: 0;
 }
 
-.logo, .footer__logo {
+.logo, .footer__logo, .primary-nav__logo {
   max-width: 7.5rem;
   max-height: 1.25rem;
 }
@@ -97,10 +32,8 @@
   background-color: #323232;
   color: #FFFFFF;
 }
-.primary-nav__heading {
-  text-transform: uppercase;
-  max-width: 7.5rem;
-  max-height: 1.25rem;
+.primary-nav__logo {
+  margin: 1rem 0rem;
 }
 .primary-nav__list {
   display: flex;
@@ -123,7 +56,7 @@
   width: 100%;
   text-decoration: none;
   color: #E1E1E1;
-  padding: 1rem 0rem;
+  padding: 0.5rem 0rem;
 }
 .primary-nav__link--active {
   color: #FFFFFF;
@@ -141,6 +74,9 @@
   padding: 1.5rem 1rem;
 }
 .footer__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
   margin: 0;
 }
 .footer__container {
@@ -160,12 +96,21 @@
   flex-direction: column;
 }
 .footer .company__heading {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
   margin: 1.5rem 0rem 0rem;
 }
 .footer .company__text {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
   margin: 1.5rem 0rem 0rem;
 }
 .footer .company__email {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
   text-decoration: none;
   color: #FFFFFF;
   margin: 1.5rem 0rem 0rem;
@@ -174,6 +119,9 @@
   margin-top: 3rem;
 }
 .footer__text {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
   margin: 1.5rem 0rem 0rem;
 }
 
@@ -181,9 +129,11 @@
   .primary-nav {
     flex-direction: row;
     justify-content: flex-start;
+    padding: 0rem 1.5rem 0rem;
   }
-  .primary-nav__heading {
-    margin: 0rem 2rem;
+  .primary-nav__logo {
+    margin: 0;
+    margin-right: 4rem;
   }
   .primary-nav__list {
     justify-content: space-between;
@@ -192,6 +142,9 @@
   }
   .primary-nav__item {
     width: auto;
+  }
+  .primary-nav__link {
+    padding: 1rem 0rem;
   }
 }
 .hero {
@@ -209,6 +162,9 @@
   align-items: center;
 }
 .hero__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
   margin: 0rem;
   color: #FFFFFF;
   padding-left: 1rem;
@@ -220,6 +176,9 @@
   flex-direction: column;
 }
 .about__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
   margin: 0rem;
   margin-bottom: 1rem;
 }
@@ -227,10 +186,16 @@
   width: 100%;
 }
 .about__quote {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
   font-weight: 700;
   margin-bottom: 0rem;
 }
 .about__heading__band {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
   padding: 1.5rem 0rem 1rem;
   margin: 0rem;
 }
@@ -242,6 +207,9 @@
   background-color: #FAFAFA;
 }
 .photo-gallery__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
   margin: 0rem 0rem 1rem;
 }
 .photo-gallery__container {
@@ -251,4 +219,12 @@
 .photo-gallery__img {
   width: 100%;
   padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__heading {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+  }
 }/*# sourceMappingURL=bio.css.map */

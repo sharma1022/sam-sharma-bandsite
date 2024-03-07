@@ -1,10 +1,11 @@
 @use "./variables";
 @use "./media-query" as mediaQuery;
-@use "./font";
+@use "./font" as fontStyle;
 
-*{
+html,body{
     box-sizing: border-box;
     font-family: "Avenir";
+    margin: 0;
 }
 
 .logo{
@@ -20,12 +21,9 @@
     color: variables.$white;
     //padding: 2rem 0rem;
 
-    &__heading{
-        @extend .sub-header--m;
-        text-transform: uppercase;
-        max-width: 7.5rem;
-        max-height: 1.25rem;
-        
+    &__logo{
+        @extend .logo;
+        margin: 1rem 0rem;
     }
     
     &__list{
@@ -49,7 +47,7 @@
         width: 100%;
         text-decoration: none;
         color: variables.$mercury;
-        padding: 1rem 0rem;
+        padding: 0.5rem 0rem;
 
         &--active{
             color: variables.$white;
@@ -69,7 +67,7 @@
     padding: 1.5rem 1rem;
 
     &__heading{
-        @extend .section-header--m;
+        @include fontStyle.section-header(small);
         margin: 0;
     }
     &__container{
@@ -89,15 +87,15 @@
             flex-direction: column;
         }
         &__heading{
-            @extend .sub-header--m;
+            @include fontStyle.sub-header(small);
             margin: 1.5rem 0rem 0rem;
         }
         &__text{
-            @extend .footer-copy--m;
+            @include fontStyle.footer-copy(small);
             margin: 1.5rem 0rem 0rem;
         }
         &__email{
-            @extend .footer-copy--m;
+            @include fontStyle.footer-copy(small);
             text-decoration: none;
             color: variables.$white;
             margin: 1.5rem 0rem 0rem;
@@ -108,7 +106,7 @@
         margin-top: 3rem;
     }
     &__text{
-        @extend .footer-copy--m;
+        @include fontStyle.footer-copy(small);
         margin: 1.5rem 0rem 0rem;
     }
 }
@@ -116,9 +114,10 @@
     .primary-nav{
         flex-direction: row;
         justify-content: flex-start;
-        
-        &__heading{
-            margin:0rem 2rem;
+        padding: 0rem 1.5rem 0rem;
+        &__logo{
+            margin: 0;
+            margin-right:4rem;
             
         }
         &__list{
@@ -128,6 +127,9 @@
         }
         &__item{
             width: auto;
+        }
+        &__link{
+            padding: 1rem 0rem;
         }
     }
 }
