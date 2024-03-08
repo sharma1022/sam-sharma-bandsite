@@ -30,6 +30,9 @@
     padding: 1.5rem 1rem 1rem;
     display: flex;
     flex-direction: column;
+    &__container{
+
+    }
     &__heading{
         @include fontStyle.section-header(small);
         margin: 0rem;
@@ -43,7 +46,11 @@
         font-weight: 700;
         margin-bottom: 0rem;
     }
-    &__heading__band{
+    &__sub-container{
+        display: flex;
+        flex-direction: column;
+    }
+    &__sub-heading{
         @include fontStyle.sub-header(small);
         padding: 1.5rem 0rem 1rem;
         margin: 0rem;
@@ -80,12 +87,41 @@
     }
     .about{
         padding: 0rem 2rem;
+        &__container{
+            padding: 0rem 4rem;
+        }
         &__heading{
             @include fontStyle.section-header(large);
             margin-top: 3rem;
         }
         &__img{
-            width: 80%;
+            width: 100%;
+        }
+        &__sub-container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &__sub-heading{
+            @include fontStyle.sub-header(large);
+        }
+        &__sub-text{
+            @include fontStyle.body-copy(large);
+            width: 48%;
+        }
+    }
+    .photo-gallery{
+        padding: 2rem 2rem;
+        &__heading{
+            @include fontStyle.section-header(large);
+        }
+        &__container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 1.5rem;
+        }
+        &__img{
+            padding: 0;
+            
         }
     }
 }

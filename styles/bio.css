@@ -192,7 +192,11 @@ html, body {
   font-weight: 700;
   margin-bottom: 0rem;
 }
-.about__heading__band {
+.about__sub-container {
+  display: flex;
+  flex-direction: column;
+}
+.about__sub-heading {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -234,6 +238,9 @@ html, body {
   .about {
     padding: 0rem 2rem;
   }
+  .about__container {
+    padding: 0rem 4rem;
+  }
   .about__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -241,6 +248,37 @@ html, body {
     margin-top: 3rem;
   }
   .about__img {
-    width: 80%;
+    width: 100%;
+  }
+  .about__sub-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .about__sub-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+  .about__sub-text {
+    font-size: 0.875rem;
+    line-height: 1.475rem;
+    font-weight: 400;
+    width: 48%;
+  }
+  .photo-gallery {
+    padding: 2rem 2rem;
+  }
+  .photo-gallery__heading {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+  }
+  .photo-gallery__container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1.5rem;
+  }
+  .photo-gallery__img {
+    padding: 0;
   }
 }/*# sourceMappingURL=bio.css.map */
