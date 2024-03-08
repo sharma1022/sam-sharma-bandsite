@@ -23,7 +23,7 @@ html,body{
 
     &__logo{
         @extend .logo;
-        margin: 1rem 0rem;
+        padding: 1rem 0rem 0.5rem;
     }
     
     &__list{
@@ -64,15 +64,15 @@ html,body{
     color: variables.$white;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 1rem;
+    padding: 0 1rem;
 
     &__heading{
         @include fontStyle.section-header(small);
         margin: 0;
+        padding: 1.5rem 0 1rem;;
     }
     &__container{
         display: flex;
-        margin-top: 1.5rem;
     }
     &__icon{
         height: 1.5rem;
@@ -88,17 +88,19 @@ html,body{
         }
         &__heading{
             @include fontStyle.sub-header(small);
-            margin: 1.5rem 0rem 0rem;
+            margin: 0;
+            padding: 1.5rem 0 1rem;;
         }
         &__text{
             @include fontStyle.footer-copy(small);
-            margin: 1.5rem 0rem 0rem;
+            margin: 0;
         }
         &__email{
             @include fontStyle.footer-copy(small);
             text-decoration: none;
             color: variables.$white;
-            margin: 1.5rem 0rem 0rem;
+            margin: 0;
+            padding-top: 1rem;
         }
     }
     &__logo{
@@ -107,7 +109,7 @@ html,body{
     }
     &__text{
         @include fontStyle.footer-copy(small);
-        margin: 1.5rem 0rem 0rem;
+        margin: 1.5rem 0rem 1.5rem;
     }
 }
 @include mediaQuery.tablet{
