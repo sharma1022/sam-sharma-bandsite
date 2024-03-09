@@ -1,5 +1,5 @@
 @use "./partials/global";
-@use "./partials/font" as fontStyle;
+@use "./partials/mixins" as style;
 @use "./partials/variables";
 @use "./partials/media-query" as mediaQuery;
 
@@ -20,7 +20,7 @@
         
     }
     &__heading{
-        @include fontStyle.page-header(small);
+        @include style.page-header(small);
         margin: 0rem;
         color: variables.$white;
         padding-left: 1rem;
@@ -28,24 +28,29 @@
 }
 
 .about{
-    padding: 0rem 1rem 1rem;
+    @include style.section-padding(mobile);
     display: flex;
     flex-direction: column;
     &__heading{
-        @include fontStyle.section-header(small);
+        @include style.section-header(small);
+        @include style.header-padding(small);
         margin: 0rem;
-        padding: 1.5rem 0 1rem;;
     }
     &__img{
+        background-image: url("../assets/Images/band.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         width: 100%;
+        height: 350px;
     }
     &__quote{
-        @include fontStyle.sub-header(small);
+        @include style.sub-header(small);
         margin: 0;
         padding: 1rem 0 0;
     }
     &__artist{
-        @include fontStyle.sub-header(small);
+        @include style.sub-header(small);
         margin: 0;
         padding-top: 0.5rem;
     }
@@ -54,29 +59,29 @@
         flex-direction: column;
     }
     &__sub-heading{
-        @include fontStyle.sub-header(small);
-        padding: 1.5rem 0rem 1rem;
+        @include style.sub-header(small);
+        @include style.header-padding(small);
         margin: 0rem;
     }
     &__text{
-        @include fontStyle.body-copy(small);
+        @include style.body-copy(small);
         margin: 0;
         &--padding{
-            padding-top: 1rem;
+            padding: 1rem 0;
         }
     }
     
 }
 
 .photo-gallery{
-    padding: 0 1rem;
+    @include style.section-padding(mobile);
     display: flex;
     flex-direction: column;
     background-color: variables.$alabaster;
     &__heading{
-        @include fontStyle.section-header(small);
+        @include style.section-header(small);
+        @include style.header-padding(small);
         margin: 0;
-        padding: 1.5rem 0 1rem;
     }
     &__container{
         display: flex;
@@ -92,42 +97,52 @@
     .hero{
         height: 400px;
         &__heading{
-            @include fontStyle.page-header(large);
-            padding: 0rem 2rem;
+            @include style.page-header(large);
+            padding: 0rem 2.25rem;
         }
     }
     .about{
-        padding: 0rem 2rem;
+        @include style.section-padding(tablet);
+        
         &__container{
-            padding: 0rem 4rem;
+            padding: 0 3.5rem 2.25rem;
+            
         }
         &__heading{
-            @include fontStyle.section-header(large);
-            margin-top: 3rem;
+            @include style.section-header(large);
+            @include style.header-padding(large);
         }
         &__quote{
-            @include fontStyle.sub-header(large);
+            @include style.sub-header(large);
         }
         &__artist{
-            @include fontStyle.body-copy(large);
+            @include style.body-copy(large);
             font-weight: 700;
+            padding-top: 0.5rem;
         }
         &__sub-container{
             flex-direction: row;
             justify-content: space-between;
         }
         &__sub-heading{
-            @include fontStyle.sub-header(large);
+            @include style.sub-header(large);
+            @include style.header-padding(large);
+            padding-bottom: 1rem;
         }
-        &__sub-text{
-            @include fontStyle.body-copy(large);
+        &__text{
+            @include style.body-copy(large);
             width: 48%;
+            &--padding{
+                padding: 0;
+            }
         }
     }
     .photo-gallery{
-        padding: 2rem 2rem;
+        @include style.section-padding(tablet);
+        padding-bottom: 2.25rem;
         &__heading{
-            @include fontStyle.section-header(large);
+            @include style.section-header(large);
+            @include style.header-padding(large);
         }
         &__container{
             display: grid;
@@ -145,13 +160,20 @@
    .hero{
     height: 600px;
     &__heading{
-        padding: 0rem 6rem;
+        padding: 0rem 7rem;
     }
    }
    .about{
-    padding: 0rem 6rem;
+    @include style.section-padding(desktop);
+    &__container{
+        padding: 0 5.5rem;
+    }
+    &__img{
+        height: 500px;
+    }
    }
    .photo-gallery{
-    padding: 2rem 6rem;
+    @include style.section-padding(desktop);
+    padding-bottom: 2.25rem;
    }
 }

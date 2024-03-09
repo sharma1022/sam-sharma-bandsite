@@ -90,7 +90,8 @@
         padding: 0 2.25rem;
     }
     @else if $screen == "desktop"{
-        padding: auto;
+      width: 888px;
+        margin: auto;
     }
 }
 

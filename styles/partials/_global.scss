@@ -3,200 +3,210 @@
 @use "./mixins" as style;
 
 @font-face {
-    font-family: "Avenir";
-    src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("otf");
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: "Avenir";
-    src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("otf");
-    font-weight: 600;
-  }
-  @font-face {
-    font-family: "Avenir";
-    src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf");
-    font-weight: 700;
-  }
-
-html,body{
-    box-sizing: border-box;
-    font-family: "Avenir";
-    margin: 0;
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf");
+  font-weight: 700;
 }
 
-.logo{
-    max-width: 7.5rem;
-    max-height: 1.25rem;
+html,
+body {
+  box-sizing: border-box;
+  font-family: "Avenir";
+  margin: 0;
 }
-.primary-nav{
+
+.logo {
+  max-width: 7.5rem;
+  max-height: 1.25rem;
+}
+.primary-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: variables.$bs-black;
+  color: variables.$white;
+
+  &__logo {
+    @extend .logo;
+    padding: 1rem 0rem 0.5rem;
+  }
+
+  &__list {
     display: flex;
-    flex-direction: column;
+    list-style: none;
     align-items: center;
     width: 100%;
-    background-color: variables.$bs-black;
     color: variables.$white;
-    //padding: 2rem 0rem;
+    margin: 0rem;
+    padding: 0;
+  }
+  &__item {
+    @include style.body-copy(large);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: variables.$mercury;
+    padding: 0.5rem 0rem;
 
-    &__logo{
-        @extend .logo;
-        padding: 1rem 0rem 0.5rem;
+    &--active {
+      color: variables.$white;
+      border-bottom: 4px solid variables.$white;
     }
-    
-    &__list{
-        display: flex;
-        list-style: none;
-        align-items: center;
-        width: 100%;
-        padding:0rem;
-        color: variables.$white;
-        margin: 0rem;
+    &:hover {
+      border-bottom: 4px solid variables.$white;
     }
-    &__item{
-        width: 100%;
-        height: 100%;
-        text-align: center;
-    }
-    &__link{
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-        color: variables.$mercury;
-        padding: 0.5rem 0rem;
-
-        &--active{
-            color: variables.$white;
-            border-bottom: 4px solid variables.$white;
-        }
-        &:hover{
-
-            border-bottom: 4px solid variables.$white;
-        }
-    }
+  }
 }
-.footer{
-    background-color: variables.$bs-black;
-    color: variables.$white;
+.footer {
+    @include style.section-padding(mobile);
+  background-color: variables.$bs-black;
+  color: variables.$white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+
+  &__heading {
+    @include style.section-header(small);
+    @include style.header-padding(small);
+    margin: 0;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 8rem;
+  }
+  &__icon {
+    height: 1.5rem;
+  }
+  .company {
     display: flex;
     flex-direction: column;
-    padding: 0 1rem;
 
-    &__heading{
-        @include fontStyle.section-header(small);
-        margin: 0;
-        padding: 1.5rem 0 1rem;;
+    &__container {
+      display: flex;
+      flex-direction: column;
     }
-    &__container{
-        display: flex;
+    &__heading {
+      @include style.sub-header(small);
+      @include style.header-padding(small);
+      margin: 0;
     }
-    &__icon{
-        height: 1.5rem;
-        padding-right: 2rem;
+    &__text {
+      @include style.footer-copy(small);
+      margin: 0;
     }
-    .company{
-        display: flex;
-        flex-direction: column;
-
-        &__container{
-            display: flex;
-            flex-direction: column;
-        }
-        &__heading{
-            @include fontStyle.sub-header(small);
-            margin: 0;
-            padding: 1.5rem 0 1rem;;
-        }
-        &__text{
-            @include fontStyle.footer-copy(small);
-            margin: 0;
-        }
-        &__email{
-            @include fontStyle.footer-copy(small);
-            text-decoration: none;
-            color: variables.$white;
-            margin: 0;
-            padding-top: 1rem;
-        }
+    &__email {
+      @include style.footer-copy(small);
+      text-decoration: none;
+      color: variables.$white;
+      margin: 0;
+      padding-top: 1rem;
     }
-    &__logo{
-        @extend .logo;
-        margin-top: 3rem;
-    }
-    &__text{
-        @include fontStyle.footer-copy(small);
-        margin: 1.5rem 0rem 1.5rem;
-    }
+  }
+  &__logo {
+    @extend .logo;
+    padding-top: 3rem;
+  }
+  &__text {
+    @include style.footer-copy(small);
+    @include style.header-padding(small);
+    margin: 0;
+    padding-bottom: 1.5rem;
+  }
 }
-@include mediaQuery.tablet{
-    .primary-nav{
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 0rem 1.5rem 0rem;
-        &__logo{
-            margin: 0;
-            margin-right:4rem;
-            
-        }
-        &__list{
-            justify-content: space-between;
-            align-items: center;
-            width: 10rem;
-        }
-        &__item{
-            width: auto;
-        }
-        &__link{
-            padding: 1rem 0rem;
-        }
+@include mediaQuery.tablet {
+  .primary-nav {
+    @include style.section-padding(tablet);
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    &__logo {
+      padding: 0;
+      padding-right: 2.25rem;
     }
-
-    .footer{
-        padding: 2rem 2rem;
-        position: relative;
-        //flex-direction: row;
-        &__heading{
-            @include fontStyle.section-header(large);
-        }
-        &__container{
-            position: absolute;
-            top: 5%;
-            right: 41%;
-        }
-        .company{
-            flex-direction: row;
-            justify-content: space-between;
-
-            &__heading{
-                @include fontStyle.footer-copy(large);
-                font-weight: 600;
-            }
-            &__text{
-                @include fontStyle.footer-copy(large);
-
-            }
-        }
-        &__logo{
-            margin: 0;
-            position: absolute;
-            right: 2rem;
-            top: 14%;
-        }
-        &__text{
-            @include fontStyle.footer-copy(large);
-        }
+    &__list {
+      justify-content: space-between;
+      align-items: center;
+      width: 10rem;
+      padding-left: 2.25rem;
     }
+    &__item {
+      width: auto;
+    }
+    &__link {
+      padding: 1rem 0;
+    }
+  }
+  .footer {
+    @include style.section-padding(tablet);
+    position: relative;
+    &__heading {
+      @include style.section-header(large);
+      @include style.header-padding(large);
+    }
+    &__container {
+      position: absolute;
+      top: 16%;
+      right: 46%;
+    }
+    .company {
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__heading {
+        @include style.footer-copy(large);
+        font-weight: 600;
+        padding: 0 0 1.5rem 0;
+      }
+      &__text {
+        @include style.footer-copy(large);
+      }
+      &__email{
+        @include style.footer-copy(large);
+        padding: 1.5rem 0 0;
+      }
+    }
+    &__logo {
+      padding:0;
+      position: absolute;
+      right: 2.25rem;
+      top: 16%;
+      
+    }
+    &__text {
+      @include style.footer-copy(large);
+      @include style.header-padding(large);
+    }
+  }
 }
 
-@include mediaQuery.desktop{
-    .primary-nav{
-        padding: 0rem 6rem 0rem;
-    }
-    .footer{
-        padding: 2rem 6rem;
+@include mediaQuery.desktop {
+  .primary-nav {
+    padding: 0 7rem;
+  }
+  .footer {
+    padding: 0 7rem;
 
-        &__logo{
-            right: 6rem;
-        }
+    &__logo {
+      right: 7rem;
     }
+  }
 }
