@@ -1,6 +1,22 @@
 @use "./variables";
 @use "./media-query" as mediaQuery;
-@use "./font" as fontStyle;
+@use "./mixins" as style;
+
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("otf");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Avenir";
+    src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("otf");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: "Avenir";
+    src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf");
+    font-weight: 700;
+  }
 
 html,body{
     box-sizing: border-box;
