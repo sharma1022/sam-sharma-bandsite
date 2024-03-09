@@ -97,3 +97,24 @@
     font-weight: 700;
   }
 }
+
+@mixin section-padding($screen){
+    @if $screen == "mobile"{
+        padding: 0 1rem;
+    }
+    @else if $screen == "tablet"{
+        padding: 0 2.25rem;
+    }
+    @else if $screen == "desktop"{
+        padding: auto;
+    }
+}
+
+@mixin header-padding($size){
+    @if $size == "small"{
+        padding: 1.5rem 0 1rem;
+    }
+    @else if $size == "large"{
+        padding: 3rem 0 2.25rem;
+    }
+}
