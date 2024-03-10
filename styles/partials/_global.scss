@@ -76,19 +76,21 @@ body {
   }
 }
 .footer {
-    @include style.section-padding(mobile);
   background-color: variables.$bs-black;
   color: variables.$white;
-  display: flex;
+  
+&__container{
+    @include style.section-padding(mobile);
+    display: flex;
   flex-direction: column;
   padding: 0 1rem;
-
+  }
   &__heading {
     @include style.section-header(small);
     @include style.header-padding(small);
     margin: 0;
   }
-  &__container {
+  &__icons {
     display: flex;
     justify-content: space-between;
     width: 8rem;
@@ -119,8 +121,7 @@ body {
       color: variables.$white;
       margin: 0;
       padding-top: 1rem;
-    }
-  }
+    }}
   &__logo {
     @extend .logo;
     padding-top: 3rem;
@@ -156,21 +157,25 @@ body {
     }
   }
   .footer {
-    @include style.section-padding(tablet);
-    position: relative;
+    &__container{
+        @include style.section-padding(tablet);
+        position: relative;
+    }
     &__heading {
       @include style.section-header(large);
       @include style.header-padding(large);
     }
-    &__container {
+    &__icons {
       position: absolute;
       top: 16%;
-      right: 46%;
+      left: 34%;
     }
     .company {
       flex-direction: row;
-      justify-content: space-between;
-
+      justify-content: flex-start;
+    &__container{
+        padding-right: 3rem;
+    }
       &__heading {
         @include style.footer-copy(large);
         font-weight: 600;
@@ -179,17 +184,16 @@ body {
       &__text {
         @include style.footer-copy(large);
       }
-      &__email{
+      &__email {
         @include style.footer-copy(large);
         padding: 1.5rem 0 0;
       }
     }
     &__logo {
-      padding:0;
+      padding: 0;
       position: absolute;
       right: 2.25rem;
       top: 16%;
-      
     }
     &__text {
       @include style.footer-copy(large);
@@ -203,10 +207,12 @@ body {
     padding: 0 7rem;
   }
   .footer {
-    padding: 0 7rem;
-
-    &__logo {
-      right: 7rem;
+    &__container{
+        @include style.section-padding(desktop);
+        // padding: 0 7rem;
+    }
+    &__logo{
+        right: 0rem;
     }
   }
 }

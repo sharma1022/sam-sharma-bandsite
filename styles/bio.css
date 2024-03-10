@@ -71,9 +71,11 @@ body {
 }
 
 .footer {
-  padding: 0 1rem;
   background-color: #323232;
   color: #FFFFFF;
+}
+.footer__container {
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
@@ -85,7 +87,7 @@ body {
   padding: 1.5rem 0 1rem;
   margin: 0;
 }
-.footer__container {
+.footer__icons {
   display: flex;
   justify-content: space-between;
   width: 8rem;
@@ -158,7 +160,7 @@ body {
   .primary-nav__link {
     padding: 1rem 0;
   }
-  .footer {
+  .footer__container {
     padding: 0 2.25rem;
     position: relative;
   }
@@ -168,14 +170,17 @@ body {
     font-weight: 700;
     padding: 3rem 0 2.25rem;
   }
-  .footer__container {
+  .footer__icons {
     position: absolute;
     top: 16%;
-    right: 46%;
+    left: 34%;
   }
   .footer .company {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+  }
+  .footer .company__container {
+    padding-right: 3rem;
   }
   .footer .company__heading {
     font-size: 0.875rem;
@@ -212,11 +217,13 @@ body {
   .primary-nav {
     padding: 0 7rem;
   }
-  .footer {
-    padding: 0 7rem;
+  .footer__container {
+    width: 888px;
+    margin: auto;
+    padding: 0;
   }
   .footer__logo {
-    right: 7rem;
+    right: 0rem;
   }
 }
 .hero {
@@ -299,10 +306,12 @@ body {
 }
 
 .photo-gallery {
+  background-color: #FAFAFA;
+}
+.photo-gallery__container {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  background-color: #FAFAFA;
 }
 .photo-gallery__heading {
   font-size: 1.5rem;
@@ -311,7 +320,7 @@ body {
   padding: 1.5rem 0 1rem;
   margin: 0;
 }
-.photo-gallery__container {
+.photo-gallery__grid {
   display: flex;
   flex-direction: column;
 }
@@ -374,7 +383,7 @@ body {
   .about__text--padding {
     padding: 0;
   }
-  .photo-gallery {
+  .photo-gallery__container {
     padding: 0 2.25rem;
     padding-bottom: 2.25rem;
   }
@@ -384,12 +393,16 @@ body {
     font-weight: 700;
     padding: 3rem 0 2.25rem;
   }
-  .photo-gallery__container {
-    display: grid;
-    grid-template-columns: auto auto auto;
+  .photo-gallery__grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1.5rem;
+    width: 100%;
+    justify-content: space-between;
   }
   .photo-gallery__img {
+    width: 31%;
     padding: 0;
   }
 }
@@ -403,6 +416,8 @@ body {
   .about {
     width: 888px;
     margin: auto;
+    padding: 0;
+    padding-bottom: 2.25rem;
   }
   .about__container {
     padding: 0 5.5rem;
@@ -410,9 +425,10 @@ body {
   .about__img {
     height: 500px;
   }
-  .photo-gallery {
+  .photo-gallery__container {
     width: 888px;
     margin: auto;
+    padding: 0;
     padding-bottom: 2.25rem;
   }
 }/*# sourceMappingURL=bio.css.map */
