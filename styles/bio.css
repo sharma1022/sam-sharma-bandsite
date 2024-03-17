@@ -1,0 +1,453 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
+  font-weight: 700;
+}
+html,
+body {
+  box-sizing: border-box;
+  font-family: "Avenir";
+  margin: 0;
+}
+
+.logo, .footer__logo, .primary-nav__logo {
+  max-width: 7.5rem;
+  max-height: 1.25rem;
+}
+
+.primary-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #323232;
+  color: #FFFFFF;
+}
+.primary-nav__logo {
+  padding: 1rem 0rem 0.5rem;
+}
+.primary-nav__list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  width: 100%;
+  color: #FFFFFF;
+  margin: 0rem;
+  padding: 0;
+}
+.primary-nav__item {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.primary-nav__link {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #E1E1E1;
+  padding: 0.75rem 0rem;
+}
+.primary-nav__link--active {
+  color: #FFFFFF;
+  border-bottom: 4px solid #FFFFFF;
+  font-weight: 600;
+}
+.primary-nav__link:hover {
+  border-bottom: 4px solid #FFFFFF;
+}
+
+.footer {
+  background-color: #323232;
+  color: #FFFFFF;
+}
+.footer__container {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+.footer__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding: 1.5rem 0 1rem;
+  margin: 0;
+}
+.footer__icons {
+  display: flex;
+  justify-content: space-between;
+  width: 8rem;
+}
+.footer__icon {
+  height: 1.5rem;
+}
+.footer .company {
+  display: flex;
+  flex-direction: column;
+}
+.footer .company__container {
+  display: flex;
+  flex-direction: column;
+}
+.footer .company__heading {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  padding: 1.5rem 0 1rem;
+  margin: 0;
+}
+.footer .company__text {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+}
+.footer .company__email {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #FFFFFF;
+  margin: 0;
+  padding-top: 1rem;
+}
+.footer__logo {
+  padding-top: 3rem;
+}
+.footer__text {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  padding: 1.5rem 0 1rem;
+  margin: 0;
+  padding-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .primary-nav {
+    padding: 0 2.25rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .primary-nav__logo {
+    padding: 0;
+  }
+  .primary-nav__logo-link {
+    margin-right: 2.25rem;
+  }
+  .primary-nav__list {
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+    padding-left: 2.25rem;
+  }
+  .primary-nav__item {
+    width: auto;
+  }
+  .primary-nav__link {
+    padding: 1.5rem 0;
+  }
+  .footer__container {
+    padding: 0 2.25rem;
+    position: relative;
+  }
+  .footer__heading {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding: 3rem 0 2.25rem;
+  }
+  .footer__icons {
+    position: absolute;
+    top: 16%;
+    left: 17rem;
+  }
+  .footer .company {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .footer .company__container {
+    padding-right: 3rem;
+  }
+  .footer .company__heading {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    font-weight: 600;
+    padding: 0 0 1.5rem 0;
+  }
+  .footer .company__text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+  .footer .company__email {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    padding: 1.5rem 0 0;
+  }
+  .footer__logo {
+    padding: 0;
+    position: absolute;
+    right: 2.25rem;
+    top: 16%;
+  }
+  .footer__text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    padding: 3rem 0 2.25rem;
+    padding-bottom: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .primary-nav {
+    padding: 0 7rem;
+  }
+  .primary-nav__list {
+    width: 8rem;
+  }
+  .footer__container {
+    width: 1020px;
+    margin: auto;
+    padding: 0;
+  }
+  .footer__logo {
+    right: 0rem;
+  }
+  .footer__icons {
+    left: 15rem;
+  }
+}
+.hero {
+  background-image: url("../assets/images/hero-bio.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0rem;
+  height: 250px;
+}
+.hero__layer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: flex;
+  align-items: center;
+}
+.hero__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin: 0rem;
+  color: #FFFFFF;
+  padding-left: 1rem;
+}
+
+.about {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.about__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding: 1.5rem 0 1rem;
+  margin: 0rem;
+}
+.about__img {
+  background-image: url("../assets/images/band.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  width: 100%;
+  height: 200px;
+}
+.about__quote {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 1rem 0 0;
+}
+.about__artist {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+.about__sub-container {
+  display: flex;
+  flex-direction: column;
+}
+.about__sub-heading {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  padding: 1.5rem 0 1rem;
+  margin: 0rem;
+}
+.about__text {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+}
+.about__text--padding {
+  padding: 1rem 0;
+}
+
+.photo-gallery {
+  background-color: #FAFAFA;
+}
+.photo-gallery__container {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.photo-gallery__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding: 1.5rem 0 1rem;
+  margin: 0;
+}
+.photo-gallery__grid {
+  display: flex;
+  flex-direction: column;
+}
+.photo-gallery__img {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 500px;
+  }
+  .hero__heading {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+    padding: 0rem 2.25rem;
+  }
+  .about {
+    padding: 0 2.25rem;
+  }
+  .about__container {
+    padding: 0 3.5rem 2.25rem;
+  }
+  .about__img {
+    height: 350px;
+  }
+  .about__heading {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding: 3rem 0 2.25rem;
+  }
+  .about__quote {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+  .about__artist {
+    font-size: 0.875rem;
+    line-height: 1.475rem;
+    font-weight: 400;
+    font-weight: 700;
+    padding-top: 0.5rem;
+  }
+  .about__sub-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .about__sub-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    padding: 3rem 0 2.25rem;
+    padding-bottom: 1rem;
+  }
+  .about__text {
+    font-size: 0.875rem;
+    line-height: 1.475rem;
+    font-weight: 400;
+    width: 48%;
+  }
+  .about__text--padding {
+    padding: 0;
+  }
+  .photo-gallery__container {
+    padding: 0 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+  .photo-gallery__heading {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding: 3rem 0 2.25rem;
+  }
+  .photo-gallery__grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .photo-gallery__img {
+    width: 31%;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 600px;
+  }
+  .hero__heading {
+    padding: 0rem 7rem;
+  }
+  .about {
+    width: 1020px;
+    margin: auto;
+    padding: 0;
+    padding-bottom: 2.25rem;
+  }
+  .about__container {
+    padding: 0 5.5rem;
+  }
+  .about__img {
+    height: 500px;
+  }
+  .photo-gallery__container {
+    width: 1020px;
+    margin: auto;
+    padding: 0;
+    padding-bottom: 2.25rem;
+  }
+  .photo-gallery__img {
+    filter: grayscale(1);
+  }
+  .photo-gallery__img:hover {
+    filter: grayscale(0);
+  }
+}/*# sourceMappingURL=bio.css.map */
