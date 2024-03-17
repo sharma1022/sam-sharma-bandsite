@@ -90,7 +90,8 @@
         padding: 0 2.25rem;
     }
     @else if $screen == "desktop"{
-      width: 888px;
+      //width =888px because 12 cols x 63 px and 11 gutters x 24 px but using width = 1020px to match the mockup at the desktop breakpoint
+      width: 1020px;
         margin: auto;
         padding: 0;
     }

@@ -4,17 +4,17 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("otf");
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("otf");
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("otf");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf");
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
   font-weight: 700;
 }
 
@@ -52,7 +52,8 @@ body {
     padding: 0;
   }
   &__item {
-    @include style.body-copy(large);
+    @include style.body-copy(small);
+    //
     width: 100%;
     height: 100%;
     text-align: center;
@@ -64,11 +65,12 @@ body {
     width: 100%;
     text-decoration: none;
     color: variables.$mercury;
-    padding: 0.5rem 0rem;
+    padding: 0.75rem 0rem;
 
     &--active {
       color: variables.$white;
       border-bottom: 4px solid variables.$white;
+      font-weight: 600;
     }
     &:hover {
       border-bottom: 4px solid variables.$white;
@@ -78,12 +80,12 @@ body {
 .footer {
   background-color: variables.$bs-black;
   color: variables.$white;
-  
-&__container{
+
+  &__container {
     @include style.section-padding(mobile);
     display: flex;
-  flex-direction: column;
-  padding: 0 1rem;
+    flex-direction: column;
+    padding: 0 1rem;
   }
   &__heading {
     @include style.section-header(small);
@@ -121,7 +123,8 @@ body {
       color: variables.$white;
       margin: 0;
       padding-top: 1rem;
-    }}
+    }
+  }
   &__logo {
     @extend .logo;
     padding-top: 3rem;
@@ -141,7 +144,9 @@ body {
     align-items: center;
     &__logo {
       padding: 0;
-      padding-right: 2.25rem;
+      &-link{
+        margin-right: 2.25rem;
+      }
     }
     &__list {
       justify-content: space-between;
@@ -153,13 +158,13 @@ body {
       width: auto;
     }
     &__link {
-      padding: 1rem 0;
+      padding: 1.5rem 0;
     }
   }
   .footer {
-    &__container{
-        @include style.section-padding(tablet);
-        position: relative;
+    &__container {
+      @include style.section-padding(tablet);
+      position: relative;
     }
     &__heading {
       @include style.section-header(large);
@@ -168,14 +173,14 @@ body {
     &__icons {
       position: absolute;
       top: 16%;
-      left: 34%;
+      left: 17rem;
     }
     .company {
       flex-direction: row;
       justify-content: flex-start;
-    &__container{
+      &__container {
         padding-right: 3rem;
-    }
+      }
       &__heading {
         @include style.footer-copy(large);
         font-weight: 600;
@@ -198,6 +203,7 @@ body {
     &__text {
       @include style.footer-copy(large);
       @include style.header-padding(large);
+      padding-bottom: 3rem;
     }
   }
 }
@@ -205,14 +211,20 @@ body {
 @include mediaQuery.desktop {
   .primary-nav {
     padding: 0 7rem;
+
+    &__list{
+      width: 8rem;
+    }
   }
   .footer {
-    &__container{
-        @include style.section-padding(desktop);
-        // padding: 0 7rem;
+    &__container {
+      @include style.section-padding(desktop);
     }
-    &__logo{
-        right: 0rem;
+    &__logo {
+      right: 0rem;
+    }
+    &__icons {
+      left: 15rem;
     }
   }
 }
