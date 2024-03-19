@@ -106,7 +106,7 @@
         @include style.header-padding(small);
         margin: 0;
     }
-    &__container{
+    &__top{
         display: flex;
         border-bottom: 1px solid variables.$mercury;
     }
@@ -115,6 +115,7 @@
         max-height: 36px;
         border-radius: 50%;
         margin-top: 1rem;
+        
     }
     &__form{
         display: flex;
@@ -149,6 +150,7 @@
         padding: 12px;
         @include style.body-copy(small);
         margin-bottom: 1rem;
+        resize: none;
         &::placeholder{
             @include style.body-copy(small);
             color: black;
@@ -168,6 +170,51 @@
             background-color: variables.$bs-black-d;
         }
     }
+    &__bottom{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        &-container{
+            display: flex;
+            flex-direction: row;
+            padding: 1rem 0;
+            border-bottom: 1px solid variables.$mercury;
+        }
+        &-avatar{
+            width: 36px;
+            height: 36px;
+            background-color: variables.$mercury;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+        }
+        &-right{
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem;
+            width: 100%;
+            &-container{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    }
+    &__name{
+        @include style.sub-header(small);
+        margin: 0;
+        padding-bottom: 0.5rem;
+    }
+    &__date{
+        @include style.body-copy(small);
+        color: variables.$silver;
+        margin: 0;
+    }
+    &__text{
+        @include style.body-copy(small);
+        margin: 0;
+    }
+
 }
 
 @include mediaQuery.tablet{
