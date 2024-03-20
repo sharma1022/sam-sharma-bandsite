@@ -142,13 +142,14 @@
             color: black;
             font-family: "Avenir";
         }
-        &--active{
+         &--active{
+             outline:none;
+             border: 1px solid black;
+         }
+         &--error{
             outline:none;
-            border: 1px solid black;
-        }
-        &--error{
-            border: 1px solid #D22D2D;
-        }
+            border: 1px solid variables.$error;
+         }
     }
     &__txt-area{
         border-radius: 4px;

@@ -405,6 +405,7 @@ body {
   border: 1px solid black;
 }
 .comment__input--error {
+  outline: none;
   border: 1px solid #D22D2D;
 }
 .comment__txt-area {
