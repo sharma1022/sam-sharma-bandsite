@@ -400,6 +400,13 @@ body {
   color: black;
   font-family: "Avenir";
 }
+.comment__input--active {
+  outline: none;
+  border: 1px solid black;
+}
+.comment__input--error {
+  border: 1px solid #D22D2D;
+}
 .comment__txt-area {
   border-radius: 4px;
   border: 1px solid #E1E1E1;
@@ -424,7 +431,14 @@ body {
   color: black;
   font-family: "Avenir";
 }
-.comment__button {
+.comment__txt-area--active {
+  outline: none;
+  border: 1px solid black;
+}
+.comment__txt-area--error {
+  border: 1px solid #D22D2D;
+}
+.comment__btn {
   background-color: #323232;
   color: #FFFFFF;
   height: 40px;
@@ -434,7 +448,7 @@ body {
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
-.comment__button:hover {
+.comment__btn:hover {
   background-color: #000000;
 }
 .comment__bottom {

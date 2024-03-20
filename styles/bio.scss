@@ -114,8 +114,7 @@
         max-width: 36px;
         max-height: 36px;
         border-radius: 50%;
-        margin-top: 1rem;
-        
+        margin-top: 1rem;   
     }
     &__form{
         display: flex;
@@ -143,10 +142,17 @@
             color: black;
             font-family: "Avenir";
         }
+        &--active{
+            outline:none;
+            border: 1px solid black;
+        }
+        &--error{
+            border: 1px solid #D22D2D;
+        }
     }
     &__txt-area{
         border-radius: 4px;
-        border: 1px solid  variables.$mercury;
+        border: 1px solid variables.$mercury;
         padding: 12px;
         @include style.body-copy(small);
         margin-bottom: 1rem;
@@ -156,8 +162,15 @@
             color: black;
             font-family: "Avenir";
         }
+        &--active{
+            outline: none;
+            border: 1px solid black;
+        }
+        &--error{
+            border: 1px solid #D22D2D;
+        }
     }
-    &__button{
+    &__btn{
         background-color: variables.$bs-black;
         color: variables.$white;
         height: 40px;
@@ -169,6 +182,7 @@
         &:hover{
             background-color: variables.$bs-black-d;
         }
+        
     }
     &__bottom{
         display: flex;
