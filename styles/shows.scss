@@ -1,0 +1,99 @@
+@use "./partials/global";
+@use "./partials/mixins" as style;
+@use "./partials/variables";
+@use "./partials/media-query" as mediaQuery;
+
+.hero{
+    background-image: url("../assets/images/hero-shows.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0rem;
+    height: 350px;
+
+    &__layer{
+        width: 100%;
+        height: 100%;
+        background-color: variables.$bs-black-overlay;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        
+    }
+    &__container{
+        padding: 1rem;
+        height: 100%;
+    }
+    &__album{
+        @include style.sub-header(small);
+        @include style.header-padding(small);
+        font-weight: 400;
+        margin: 0rem;
+        color: variables.$white;
+        
+    }
+    &__heading{
+        @include style.page-header(small);
+        @include style.header-padding(small);
+        margin: 0rem;
+        color: variables.$white;
+        width: 70%;
+        padding-top: 0;
+    }
+}
+
+.shows{
+    display: flex;
+    flex-direction: column;
+    @include style.section-padding(mobile);
+    &__heading{
+        @include style.section-header(small);
+        @include style.header-padding(small);
+        margin: 0;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid variables.$mercury;
+    }
+    &__title{
+        color: variables.$silver;
+        text-transform: uppercase;
+        @include style.body-copy(small);
+        margin: 0;
+        
+    }
+    &__date{
+        @include style.sub-header(small);
+        padding: 1rem 0;
+        margin: 0;
+    }
+    &__venue{
+        @include style.body-copy(small);
+        padding: 1rem 0;
+        margin: 0;
+    }
+    &__location{
+        @include style.body-copy(small);
+        padding: 1rem 0;
+        margin: 0;
+    }
+    &__btn{
+        background-color: variables.$bs-black;
+        color: variables.$white;
+        height: 40px;
+        width: 100%;
+        border: 0;
+        border-radius: 4px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        &:hover{
+            background-color: variables.$bs-black-d;
+        }
+    }
+}
+
+@include mediaQuery.tablet{
+
+}
