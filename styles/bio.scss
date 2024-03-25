@@ -232,7 +232,7 @@
 
 }
 
-@include mediaQuery.tablet{
+    @include mediaQuery.tablet{
     .hero{
         height: 500px;
         &__heading{

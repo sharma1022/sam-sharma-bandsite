@@ -1,251 +1,121 @@
-const showsArr = [{
+const showsArr = [
+  {
     date: "Mon Sept 09 2024",
     venue: "Ronald Lane",
-    location: "San Francisco, CA"
-},
-{
+    location: "San Francisco, CA",
+  },
+  {
     date: "Tue Sept 17 2024",
     venue: "Pier 3 East",
-    location: "San Francisco, CA"
-},
-{
+    location: "San Francisco, CA",
+  },
+  {
     date: "Sat Oct 12 2024",
     venue: "View Lounge",
-    location: "San Francisco, CA"
-},
-{
+    location: "San Francisco, CA",
+  },
+  {
     date: "Sat Nov 16 2024",
     venue: "Hyatt Agency",
-    location: "San Francisco, CA"
-},
-{
+    location: "San Francisco, CA",
+  },
+  {
     date: "Fri Nov 29 2024",
     venue: "Moscow Center",
-    location: "San Francisco, CA"
-},
-{
+    location: "San Francisco, CA",
+  },
+  {
     date: "Wed Dec 18 2024",
     venue: "Press Club",
-    location: "San Francisco, CA"
-}];
+    location: "San Francisco, CA",
+  },
+];
 
-const mediaQueryTablet = window.matchMedia("(min-width: 768px)");
-// //const mediaQueryDesktop = window.matchMedia("(min-widht: 1280px");
-// console.log(mediaQueryTablet.matches);
-const showsDiv = document.querySelector(".shows");
+const labels = ["Date", "Venue", "Location"];
 
+const shows = document.querySelector(".shows");
+const showsRight = document.createElement("div");
+showsRight.classList.add("shows__right");
+shows.appendChild(showsRight);
 
+const displayTableHeader = () => {
+  const tableHeadingList = document.createElement("ul");
+  tableHeadingList.classList.add("shows__labels__list");
+  showsRight.appendChild(tableHeadingList);
 
-// const displayShows = (mediaQuery) =>{
-//     if(mediaQuery.matches){
-//         console.log(mediaQuery.matches);
-//         const showsTable = document.createElement("table");
-//     showsTable.classList.add("shows__table");
-//     showsDiv.appendChild(showsTable);
+  labels.forEach((label) => {
+    const tableHeadingLabel = document.createElement("li");
+    tableHeadingLabel.classList.add("shows__label");
+    tableHeadingLabel.innerText = label;
+    tableHeadingList.appendChild(tableHeadingLabel);
+  });
+};
 
-//     const showsTopRow = document.createElement("tr");
-//     showsTopRow.appendChild(showsTable);
-
-//     const showsDate = document.createElement("th");
-//     showsDate.classList.add("shows__title");
-//     showsDate.innerText = "Date";
-//     showsTopRow.appendChild(showsDate);
-
-//     const showsVenue = document.createElement("th");
-//     showsVenue.classList.add("shows__title");
-//     showsVenue.innerText = "Venue";
-//     showsTopRow.appendChild(showsVenue);
-
-//     const showsLocation = document.createElement("th");
-//     showsLocation.classList.add("shows__title");
-//     showsLocation.innerText = "Location";
-//     showsTopRow.appendChild(showsLocation);
-
-//     showsArr.forEach(show => {
-//         const showsRow = document.createElement("tr");
-//         showsRow.classList.add("shows__row");
-//         showsTable.appendChild(showsRow);
-
-//         const date = document.createElement("td");
-//         date.classList.add("shows__date");
-//         date.innerText = show.date;
-//         showsRow.appendChild(date);
-
-//         const venue = document.createElement("td");
-//         venue.classList.add("shows__venue");
-//         venue.innerText = show.venue;
-//         showsRow.appendChild(venue);
-
-//         const location = document.createElement("td");
-//         location.classList.add("shows__location");
-//         location.innerText = show.location;
-//         showsRow.appendChild(location);
-
-//         const button = document.createElement("td");
-//         showsRow.appendChild(button);
-
-//         const buyTixBtn = document.createElement("button");
-//         buyTixBtn.classList.add("shows__btn");
-//         buyTixBtn.innerText = "Buy Tickets";
-//         button.appendChild(buyTixBtn);
-//     })
-//     }
-//     else{
-//         showsArr.forEach(show => {
-//             const showsContainer = document.createElement("div");
-//             showsContainer.classList.add("shows__container");
-//             showsDiv.appendChild(showsContainer);
-    
-//             const dateTitle = document.createElement("h4");
-//             dateTitle.classList.add("shows__title");
-//             dateTitle.innerText = "Date";
-//             showsContainer.appendChild(dateTitle);
-    
-//             const date = document.createElement("h3");
-//             date.classList.add("shows__date");
-//             date.innerHTML = show.date;
-//             showsContainer.appendChild(date);
-    
-//             const venueTitle = document.createElement("h4");
-//             venueTitle.classList.add("shows__title");
-//             venueTitle.innerText = "Venue";
-//             showsContainer.appendChild(venueTitle);
-            
-//             const venue = document.createElement("h3");
-//             venue.classList.add("shows__venue");
-//             venue.innerHTML = show.venue;
-//             showsContainer.appendChild(venue);
-    
-//             const locationTitle = document.createElement("h4");
-//             locationTitle.classList.add("shows__title");
-//             locationTitle.innerText = "Location";
-//             showsContainer.appendChild(locationTitle);
-    
-//             const location = document.createElement("h3");
-//             location.classList.add("shows__venue");
-//             location.innerText = show.location;
-//             showsContainer.appendChild(location);
-    
-//             const buyTixBtn = document.createElement("button");
-//             buyTixBtn.classList.add("shows__btn");
-//             buyTixBtn.innerText = "Buy Tickets";
-//             showsContainer.appendChild(buyTixBtn);
-//         })
-//     }
-// }
-// displayShows(mediaQueryTablet);
-
-// mediaQueryTablet.addEventListener("change",displayShows);
 const displayShows = () => {
-    showsArr.forEach(show => {
-                    const showsContainer = document.createElement("div");
-                    showsContainer.classList.add("shows__container");
-                    showsDiv.appendChild(showsContainer);
-            
-                    const dateTitle = document.createElement("h4");
-                    dateTitle.classList.add("shows__title");
-                    dateTitle.innerText = "Date";
-                    showsContainer.appendChild(dateTitle);
-            
-                    const date = document.createElement("h3");
-                    date.classList.add("shows__date");
-                    date.innerHTML = show.date;
-                    showsContainer.appendChild(date);
-            
-                    const venueTitle = document.createElement("h4");
-                    venueTitle.classList.add("shows__title");
-                    venueTitle.innerText = "Venue";
-                    showsContainer.appendChild(venueTitle);
-                    
-                    const venue = document.createElement("h3");
-                    venue.classList.add("shows__venue");
-                    venue.innerHTML = show.venue;
-                    showsContainer.appendChild(venue);
-            
-                    const locationTitle = document.createElement("h4");
-                    locationTitle.classList.add("shows__title");
-                    locationTitle.innerText = "Location";
-                    showsContainer.appendChild(locationTitle);
-            
-                    const location = document.createElement("h3");
-                    location.classList.add("shows__venue");
-                    location.innerText = show.location;
-                    showsContainer.appendChild(location);
-            
-                    const buyTixBtn = document.createElement("button");
-                    buyTixBtn.classList.add("shows__btn");
-                    buyTixBtn.innerText = "Buy Tickets";
-                    showsContainer.appendChild(buyTixBtn);
-                })
-}
-const displayShowsTablet = () => {
-    const showsTable = document.createElement("table");
-    showsTable.classList.add("shows__table");
-    showsDiv.appendChild(showsTable);
+  showsArr.forEach((show) => {
+    const showsContainer = document.createElement("div");
+    showsContainer.classList.add("shows__container");
+    showsRight.appendChild(showsContainer);
 
-    const showsTblHead = document.createElement("thead");
-    showsTable.appendChild(showsTblHead);
+    const showsList = document.createElement("ul");
+    showsList.classList.add("shows__list");
+    showsContainer.appendChild(showsList);
 
-    const showsTopRow = document.createElement("tr");
-    showsTblHead.appendChild(showsTopRow);
+    const showsDateLabel = document.createElement("li");
+    showsDateLabel.classList.add("shows__label", "shows__label--tablet");
+    showsDateLabel.innerText = labels[0];
 
-    const showsDate = document.createElement("th");
-    showsDate.classList.add("shows__title");
-    showsDate.innerText = "Date";
-    showsTopRow.appendChild(showsDate);
+    const showsDate = document.createElement("li");
+    showsDate.classList.add("shows__item", "shows__item--bold");
+    showsDate.innerText = show.date;
 
-    const showsVenue = document.createElement("th");
-    showsVenue.classList.add("shows__title");
-    showsVenue.innerText = "Venue";
-    showsTopRow.appendChild(showsVenue);
+    const showsVenueLabel = document.createElement("li");
+    showsVenueLabel.classList.add("shows__label", "shows__label--tablet");
+    showsVenueLabel.innerText = labels[1];
 
-    const showsLocation = document.createElement("th");
-    showsLocation.classList.add("shows__title");
-    showsLocation.innerText = "Location";
-    showsTopRow.appendChild(showsLocation);
+    const showsVenue = document.createElement("li");
+    showsVenue.classList.add("shows__item");
+    showsVenue.innerText = show.venue;
 
-    const showsTblBody = document.createElement("tbody");
-    showsTable.append(showsTblBody);
+    const showsLocationLabel = document.createElement("li");
+    showsLocationLabel.classList.add("shows__label", "shows__label--tablet");
+    showsLocationLabel.innerText = labels[2];
 
-    showsArr.forEach(show => {
-        const showsRow = document.createElement("tr");
-        showsRow.classList.add("shows__row");
-        showsTblBody.appendChild(showsRow);
+    const showsLocation = document.createElement("li");
+    showsLocation.classList.add("shows__item");
+    showsLocation.innerText = show.location;
 
-        const date = document.createElement("td");
-        date.classList.add("shows__date");
-        date.innerText = show.date;
-        showsRow.appendChild(date);
+    showsList.append(
+      showsDateLabel,
+      showsDate,
+      showsVenueLabel,
+      showsVenue,
+      showsLocationLabel,
+      showsLocation
+    );
 
-        const venue = document.createElement("td");
-        venue.classList.add("shows__venue");
-        venue.innerText = show.venue;
-        showsRow.appendChild(venue);
+    const showsButton = document.createElement("button");
+    showsButton.classList.add("shows__btn");
+    showsButton.innerText = "Buy Tickets";
+    showsContainer.appendChild(showsButton);
+  });
+};
 
-        const location = document.createElement("td");
-        location.classList.add("shows__location");
-        location.innerText = show.location;
-        showsRow.appendChild(location);
+displayTableHeader();
+displayShows();
 
-        const button = document.createElement("td");
-        showsRow.appendChild(button);
+const tableRow = document.querySelectorAll(".shows__container");
 
-        const buyTixBtn = document.createElement("button");
-        buyTixBtn.classList.add("shows__btn");
-        buyTixBtn.innerText = "Buy Tickets";
-        button.appendChild(buyTixBtn);
-    })
-}
+let activeRow = null;
 
+const rowClick = (e) => {
+  if (activeRow !== null) {
+    activeRow.classList.remove("shows__container--active");
+  }
+  activeRow = e.currentTarget;
+  activeRow.classList.add("shows__container--active");
+};
 
-
-const mediaQuerySelector = () =>{
-    if(mediaQueryTablet.matches){
-        displayShowsTablet();
-    }
-    else{
-        displayShows();
-    }
-}
-
-mediaQueryTablet.addEventListener("change", mediaQuerySelector);
+tableRow.forEach((row) => {
+  row.addEventListener("click", rowClick);
+});

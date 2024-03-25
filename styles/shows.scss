@@ -15,15 +15,15 @@
         width: 100%;
         height: 100%;
         background-color: variables.$bs-black-overlay;
-        display: flex;
-        flex-direction: column;
-
+        
         justify-content: center;
         
     }
     &__container{
         padding: 1rem;
         height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     &__album{
         @include style.sub-header(small);
@@ -47,37 +47,49 @@
     display: flex;
     flex-direction: column;
     @include style.section-padding(mobile);
-    &__heading{
+    &__header{
         @include style.section-header(small);
         @include style.header-padding(small);
         margin: 0;
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+    }
+    &__labels__list{
+        display: none;
+        
     }
     &__container{
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid variables.$mercury;
+        &--hidden{
+            display: none;
+        }
     }
-    &__title{
+    &__list{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__label{
         color: variables.$silver;
         text-transform: uppercase;
         @include style.body-copy(small);
         margin: 0;
-        
+        width: 30%;
+        font-size: 0.65rem;
+        font-weight: 600;
     }
-    &__date{
-        @include style.sub-header(small);
-        padding: 1rem 0;
-        margin: 0;
-    }
-    &__venue{
+    &__item{
         @include style.body-copy(small);
-        padding: 1rem 0;
+        padding: 0.2rem 0 1rem 0;
         margin: 0;
-    }
-    &__location{
-        @include style.body-copy(small);
-        padding: 1rem 0;
-        margin: 0;
+        width: 100%;
+        &--bold{
+            font-weight: 600;
+        }
     }
     &__btn{
         background-color: variables.$bs-black;
@@ -95,5 +107,122 @@
 }
 
 @include mediaQuery.tablet{
+    .hero{
+        height: 450px;
+
+        &__container{
+            @include style.section-padding(tablet);
+        }
+        &__album{
+            @include style.sub-header(large);
+            @include style.header-padding(large);
+            padding-bottom: 1rem;
+        }
+        &__heading{
+            @include style.page-header(large);
+            @include style.header-padding(large);
+            padding-top: 0;
+            margin: 0;
+            width: 70%;
+        }
+        &__music{
+            width: 60%;
+            height: 150px;
+        }
+    }
+
+    .shows{
+        padding: 0 1rem;
+        padding-bottom: 2.25rem;
+        &__header{
+            @include style.section-header(large);
+            @include style.header-padding(large);
+            margin: 0;
+            margin-left: 1.25rem;
+        }
+        &__labels__list{
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            width: 73%;
+            justify-content: space-between;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+            margin-left: 1.25rem;
+        }
+        &__container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            &:hover{
+                background-color: variables.$alabaster;
+            }
+            &--active{
+                background-color: variables.$mercury;
+            }
+        }
+        &__list{
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+            justify-content: space-between;
+            
+        }
+        &__label{
+            padding:0;
+            width: 34%;
+            &--tablet {
+                display: none;
+                
+            }
+        }
+        &__item{
+            @include style.body-copy(large);
+            padding: 1.5rem 0;
+            &--bold{
+                font-weight: 600;
+                margin-left: 1.25rem;
+            }
+        }
+        &__btn{
+            width: 10rem;
+            margin: 0;
+            margin-right: 1rem;
+        }
+    }
+}
+
+@include mediaQuery.desktop{
+    .hero{
+        height: 550px;
+        &__container{
+            @include style.section-padding(desktop);
+            justify-content: center;
+        }
+        &__wrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &__heading{
+            width: 50%;
+        }
+        &__music{
+            width: 40%;
+            height: 120px;
+        }
+    }
+    .shows{
+        flex-direction: row;
+        @include style.section-padding(desktop);
+        justify-content: space-between;
+        padding-bottom: 2.25rem;
+        &__right{
+            width: 80%;
+            padding-top: 3rem;
+        }
+    }
 
 }
