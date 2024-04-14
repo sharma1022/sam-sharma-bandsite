@@ -38,7 +38,7 @@
 
   &__logo {
     @extend .logo;
-    padding: 1rem 0rem 0.5rem;
+    margin-top: 1rem;
   }
 
   &__list {
@@ -52,7 +52,6 @@
   }
   &__item {
     @include style.body-copy(small);
-    //
     width: 100%;
     height: 100%;
     text-align: center;
@@ -65,7 +64,6 @@
     text-decoration: none;
     color: variables.$line-color;
     padding: 0.75rem 0rem;
-
     &--active {
       color: variables.$primary-text-light;
       border-bottom: 4px solid variables.$primary-text-light;
@@ -143,6 +141,7 @@
     align-items: center;
     &__logo {
       padding: 0;
+      margin:0;
       &-link{
         margin-right: 2.25rem;
       }

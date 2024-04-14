@@ -82,9 +82,7 @@ form.addEventListener("submit", (commentObj) => {
   newComment.timestamp = Date.now();
   newComment.txt = commentObj.target.comment.value;
 
-  inputValidate(newComment);
-
-  //commentsArr.unshift(newComment);
+  validateInput(newComment);
   resetInputs();
   clearComments();
   displayComments();
@@ -95,6 +93,7 @@ const resetInputs = () => {
   commentText.value = "";
 };
 
+//got this fuction from StackOverflow. Changed it a bit to to fit the layout of the project
 const timeSince = (date) => {
   var seconds = Math.floor((new Date() - date) / 1000);
 
@@ -129,7 +128,7 @@ const clearComments = () => {
   }
 };
 
-const inputValidate = (obj) => {
+const validateInput = (obj) => {
   if (obj.name === "" && obj.txt === "") {
     userName.classList.add("comment__input--error");
     commentText.classList.add("comment__txt-area--error");
