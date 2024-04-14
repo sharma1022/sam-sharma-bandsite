@@ -117,10 +117,12 @@
         border-bottom: 1px solid variables.$line-color;
     }
     &__avatar{
-        max-width: 36px;
-        max-height: 36px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
-        margin-top: 1rem;   
+        margin-top: 1.25rem;
+        background-image: url("../assets/images/Mohan-muruge.jpg");   
+        background-size: cover;
     }
     &__form{
         display: flex;
@@ -143,6 +145,7 @@
         margin-bottom: 1rem;
         @include style.body-copy(small);
         color: black;
+        background-color: variables.$light-bg;
         &::placeholder{
             @include style.body-copy(small);
             color: black;
@@ -164,6 +167,7 @@
         @include style.body-copy(small);
         margin-bottom: 1rem;
         resize: none;
+        background-color: variables.$light-bg;
         &::placeholder{
             @include style.body-copy(small);
             color: black;
@@ -204,7 +208,6 @@
             width: 36px;
             height: 36px;
             background-color: variables.$line-color;
-            background-repeat: no-repeat;
             background-size: cover;
             border-radius: 50%;
         }
@@ -311,6 +314,10 @@
         &__container{
             padding: 0 3.5rem 2.25rem;
         }
+        &__btn{
+            margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+        }
     }
 }
 
@@ -348,6 +355,7 @@
     @include style.section-padding(desktop);
     &__container{
         padding: 0 16rem;
+        padding-bottom: 2.25rem;
     }
    }
 }

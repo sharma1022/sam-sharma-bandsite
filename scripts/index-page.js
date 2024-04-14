@@ -19,15 +19,15 @@ const commentsArr = [
 const userName = document.querySelector(".comment__input");
 const commentText = document.querySelector(".comment__txt-area");
 
- userName.addEventListener("click", () => {
-   userName.classList.add("comment__input--active");
-   userName.classList.remove("comment__input--error");
- });
+userName.addEventListener("click", () => {
+  userName.classList.add("comment__input--active");
+  userName.classList.remove("comment__input--error");
+});
 
- commentText.addEventListener("click", () => {
-   commentText.classList.add("comment__txt-area--active");
-   userName.classList.remove("comment__txt-area--error");
- });
+commentText.addEventListener("click", () => {
+  commentText.classList.add("comment__txt-area--active");
+  userName.classList.remove("comment__txt-area--error");
+});
 
 const displayComments = () => {
   const commentSection = document.querySelector(".comment__bottom");
@@ -130,28 +130,23 @@ const clearComments = () => {
 };
 
 const inputValidate = (obj) => {
-    if(obj.name === "" && obj.txt === ""){
-        userName.classList.add("comment__input--error");
-        commentText.classList.add("comment__txt-area--error");
-    }
-    else if(obj.name === ""){
-        userName.classList.add("comment__input--error");
-        commentText.classList.remove("comment__txt-area--error");
-    }
-    else if(!isNaN(obj.name)){
-        userName.classList.add("comment__input--error");
-        commentText.classList.remove("comment__txt-area--error");
-    }
-    else if (obj.txt === ""){
-        commentText.classList.add("comment__txt-area--error");
-        userName.classList.remove("comment__input--error");
-    }
-    
-    else{
-        userName.classList.remove("comment__input--error");
-        commentText.classList.remove("comment__txt-area--error");
-        userName.classList.add("comment__input--active");
-        commentText.classList.add("comment__txt-area--active");
-        commentsArr.unshift(obj);
-    }
-} 
+  if (obj.name === "" && obj.txt === "") {
+    userName.classList.add("comment__input--error");
+    commentText.classList.add("comment__txt-area--error");
+  } else if (obj.name === "") {
+    userName.classList.add("comment__input--error");
+    commentText.classList.remove("comment__txt-area--error");
+  } else if (!isNaN(obj.name)) {
+    userName.classList.add("comment__input--error");
+    commentText.classList.remove("comment__txt-area--error");
+  } else if (obj.txt === "") {
+    commentText.classList.add("comment__txt-area--error");
+    userName.classList.remove("comment__input--error");
+  } else {
+    userName.classList.remove("comment__input--error");
+    commentText.classList.remove("comment__txt-area--error");
+    userName.classList.add("comment__input--active");
+    commentText.classList.add("comment__txt-area--active");
+    commentsArr.unshift(obj);
+  }
+};
