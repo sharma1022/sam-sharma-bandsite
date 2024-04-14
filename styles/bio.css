@@ -13,10 +13,9 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
   font-weight: 700;
 }
-html,
-body {
+* {
   box-sizing: border-box;
-  font-family: "Avenir";
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -222,7 +221,7 @@ body {
     padding: 0 7rem;
   }
   .primary-nav__list {
-    width: 8rem;
+    width: 10rem;
   }
   .footer__container {
     width: 1020px;
@@ -243,6 +242,7 @@ body {
   background-position: center;
   margin: 0rem;
   height: 250px;
+  width: 100%;
 }
 .hero__layer {
   width: 100%;
@@ -264,6 +264,7 @@ body {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  color: #323232;
 }
 .about__heading {
   font-size: 1.5rem;
@@ -317,6 +318,7 @@ body {
 
 .photo-gallery {
   background-color: #FAFAFA;
+  color: #323232;
 }
 .photo-gallery__container {
   padding: 0 1rem;
@@ -343,6 +345,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
+  color: #323232;
 }
 .comment__heading {
   font-size: 1.5rem;
@@ -350,6 +353,9 @@ body {
   font-weight: 700;
   padding: 1.5rem 0 1rem;
   margin: 0;
+}
+.comment__container {
+  padding-bottom: 1rem;
 }
 .comment__top {
   display: flex;
@@ -455,7 +461,6 @@ body {
 .comment__bottom {
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
 }
 .comment__bottom-container {
   display: flex;
@@ -582,6 +587,12 @@ body {
     width: 31%;
     padding: 0;
   }
+  .comment {
+    padding: 0 2.25rem;
+  }
+  .comment__container {
+    padding: 0 3.5rem 2.25rem;
+  }
 }
 @media screen and (min-width: 1280px) {
   .hero {
@@ -613,5 +624,13 @@ body {
   }
   .photo-gallery__img:hover {
     filter: grayscale(0);
+  }
+  .comment {
+    width: 1020px;
+    margin: auto;
+    padding: 0;
+  }
+  .comment__container {
+    padding: 0 16rem;
   }
 }/*# sourceMappingURL=bio.css.map */

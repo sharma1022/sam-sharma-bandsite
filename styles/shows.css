@@ -13,10 +13,9 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
   font-weight: 700;
 }
-html,
-body {
+* {
   box-sizing: border-box;
-  font-family: "Avenir";
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -222,7 +221,7 @@ body {
     padding: 0 7rem;
   }
   .primary-nav__list {
-    width: 8rem;
+    width: 10rem;
   }
   .footer__container {
     width: 1020px;
@@ -374,6 +373,7 @@ body {
   .shows {
     padding: 0 1rem;
     padding-bottom: 2.25rem;
+    color: #323232;
   }
   .shows__header {
     font-size: 2.25rem;

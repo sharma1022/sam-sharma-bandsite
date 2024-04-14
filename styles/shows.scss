@@ -14,7 +14,7 @@
     &__layer{
         width: 100%;
         height: 100%;
-        background-color: variables.$bs-black-overlay;
+        background-color: variables.$black-overlay;
         
         justify-content: center;
         
@@ -30,14 +30,14 @@
         @include style.header-padding(small);
         font-weight: 400;
         margin: 0rem;
-        color: variables.$white;
+        color: variables.$primary-text-light;
         
     }
     &__heading{
         @include style.page-header(small);
         @include style.header-padding(small);
         margin: 0rem;
-        color: variables.$white;
+        color: variables.$primary-text-light;
         width: 70%;
         padding-top: 0;
     }
@@ -63,7 +63,7 @@
     &__container{
         display: flex;
         flex-direction: column;
-        border-bottom: 1px solid variables.$mercury;
+        border-bottom: 1px solid variables.$line-color;
         &--hidden{
             display: none;
         }
@@ -74,7 +74,7 @@
         margin: 0;
     }
     &__label{
-        color: variables.$silver;
+        color: variables.$secondary-text;
         text-transform: uppercase;
         @include style.body-copy(small);
         margin: 0;
@@ -92,8 +92,8 @@
         }
     }
     &__btn{
-        background-color: variables.$bs-black;
-        color: variables.$white;
+        background-color: variables.$primary-bg;
+        color: variables.$primary-text-light;
         height: 40px;
         width: 100%;
         border: 0;
@@ -101,7 +101,7 @@
         text-transform: uppercase;
         margin-bottom: 1rem;
         &:hover{
-            background-color: variables.$bs-black-d;
+            background-color: variables.$secondary-bg;
         }
     }
 }
@@ -134,6 +134,7 @@
     .shows{
         padding: 0 1rem;
         padding-bottom: 2.25rem;
+        color: variables.$primary-bg;
         &__header{
             @include style.section-header(large);
             @include style.header-padding(large);
@@ -157,10 +158,10 @@
             align-items: center;
             justify-content: space-between;
             &:hover{
-                background-color: variables.$alabaster;
+                background-color: variables.$light-bg;
             }
             &--active{
-                background-color: variables.$mercury;
+                background-color: variables.$line-color;
             }
         }
         &__list{
