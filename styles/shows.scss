@@ -46,6 +46,7 @@
     flex-direction: column;
     @include style.section-padding(mobile);
     padding: 1rem;
+    color: variables.$primary-bg;
     &__header{
         @include style.section-header(small);
         @include style.header-padding(small);
@@ -57,7 +58,6 @@
     }
     &__labels__list{
         display: none;
-        
     }
     &__container{
         display: flex;

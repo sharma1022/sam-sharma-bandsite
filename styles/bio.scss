@@ -311,6 +311,9 @@
     }
     .comment{
         @include style.section-padding(tablet);
+        &__heading{
+            @include style.section-header(large);
+        }
         &__container{
             padding: 0 3.5rem 2.25rem;
         }

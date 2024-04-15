@@ -126,7 +126,7 @@
   padding-top: 1rem;
 }
 .footer__logo {
-  padding-top: 3rem;
+  margin-top: 3rem;
 }
 .footer__text {
   font-size: 0.813rem;
@@ -208,6 +208,7 @@
     position: absolute;
     right: 2.25rem;
     top: 16%;
+    margin: 0;
   }
   .footer__text {
     font-size: 0.875rem;
@@ -281,6 +282,7 @@
   flex-direction: column;
   padding: 0 1rem;
   padding: 1rem;
+  color: #323232;
 }
 .shows__header {
   font-size: 1.5rem;
