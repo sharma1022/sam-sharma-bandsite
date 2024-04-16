@@ -8,7 +8,6 @@ export class BandSiteApi{
         try{
             const response = await axios.get(`${this.baseUrl}comments?api_key=${this.apiKey}`);
             const comments = response.data;
-
             return comments;
         } catch(e){
             console.log(e);
@@ -24,6 +23,15 @@ export class BandSiteApi{
             console.log(response.data);
             return response.data;
         } catch(e){
+            console.log(e);
+        }
+    }
+    async getShows() {
+        try{
+            const response = await axios.get(`${this.baseUrl}showdates?api_key=${this.apiKey}`);
+            console.log(response.data);
+            return response.data;
+        }catch(e){
             console.log(e);
         }
     }

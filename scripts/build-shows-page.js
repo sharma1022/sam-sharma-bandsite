@@ -1,35 +1,49 @@
-const showsArr = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// const showsArr = [
+//   {
+//     date: "Mon Sept 09 2024",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Tue Sept 17 2024",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Oct 12 2024",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Nov 16 2024",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Nov 29 2024",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Wed Dec 18 2024",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
+
+import {BandSiteApi} from "./band-site-api.js";
+
+const api_key = "58ea0e78-00f1-4e80-a261-702cce710763";
+const api = new BandSiteApi(api_key);
+
+const showsData = await api.getShows();
+
+const timestampToDate = (timestamp) => {
+  const date = new Date(timestamp);
+  const options = {weekday: 'short', month: 'short',day: '2-digit', year: 'numeric'};
+
+  return date.toLocaleDateString('en-US', options).replace(",","");
+}
 
 const labels = ["Date", "Venue", "Location"];
 
@@ -52,7 +66,7 @@ const displayTableHeader = () => {
 };
 
 const displayShows = () => {
-  showsArr.forEach((show) => {
+  showsData.forEach((show) => {
     const showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container");
     showsRight.appendChild(showsContainer);
@@ -67,7 +81,7 @@ const displayShows = () => {
 
     const showsDate = document.createElement("li");
     showsDate.classList.add("shows__item", "shows__item--bold");
-    showsDate.innerText = show.date;
+    showsDate.innerText = timestampToDate(show.date);
 
     const showsVenueLabel = document.createElement("li");
     showsVenueLabel.classList.add("shows__label", "shows__label--tablet");
@@ -75,7 +89,7 @@ const displayShows = () => {
 
     const showsVenue = document.createElement("li");
     showsVenue.classList.add("shows__item");
-    showsVenue.innerText = show.venue;
+    showsVenue.innerText = show.place;
 
     const showsLocationLabel = document.createElement("li");
     showsLocationLabel.classList.add("shows__label", "shows__label--tablet");

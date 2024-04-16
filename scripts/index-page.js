@@ -103,11 +103,12 @@ const displayComments = () => {
     rightSection.appendChild(txt);
     txt.innerHTML = comment.comment;
   });
+  comments.sort((a,b) => {
+    b.timestamp - a.timestamp;
+})
 };
 
-window.onload = () => {
-  displayComments();
-};
+
 
 const form = document.querySelector(".comment__form");
 form.addEventListener("submit", async (e) => {
@@ -137,8 +138,6 @@ const resetInputs = () => {
   commentText.value = "";
 };
 
-
-
 const clearComments = () => {
   const commentSection = document.querySelector(".comment__bottom");
   while (commentSection.firstChild) {
@@ -167,6 +166,5 @@ const validateInput = (obj) => {
     comments.unshift(obj);
   }
 };
-
 
 displayComments();
