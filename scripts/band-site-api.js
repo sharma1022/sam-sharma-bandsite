@@ -14,4 +14,17 @@ export class BandSiteApi{
             console.log(e);
         }
     }
+    async postComment(commentObj) {
+        try{
+            const response = await axios.post(`${this.baseUrl}comments?api_key=${this.apiKey}`, commentObj, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            console.log(response.data);
+            return response.data;
+        } catch(e){
+            console.log(e);
+        }
+    }
 }
