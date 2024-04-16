@@ -18,7 +18,7 @@ import {BandSiteApi} from "./band-site-api.js";
 //   },
 // ];
 
-const api_key = "2fb74758-7ad6-444e-af0b-e32c7e857341";
+const api_key = "58ea0e78-00f1-4e80-a261-702cce710763";
 const api = new BandSiteApi(api_key);
 
 const comments = await api.getComments();
@@ -64,9 +64,10 @@ const timeSince = (date) => {
   return Math.floor(seconds) + " seconds ago";
 };
 
-const displayComment = (comment) => {
+const displayComments = () => {
   const commentSection = document.querySelector(".comment__bottom");
 
+  comments.forEach((comment) => {
     const commentContainer = document.createElement("div");
     commentContainer.classList.add("comment__bottom-container");
     commentSection.appendChild(commentContainer);
@@ -101,62 +102,71 @@ const displayComment = (comment) => {
     txt.classList.add("comment__text");
     rightSection.appendChild(txt);
     txt.innerHTML = comment.comment;
+  });
 };
 
-const displayComments = comments => {
-  comments.forEach(displayComment);
-}
+window.onload = () => {
+  displayComments();
+};
+
+const form = document.querySelector(".comment__form");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = userName.value;
+  const comment = commentText.value;
+
+  if(name && comment){
+    const response =await api.postComment({name, comment});
+    const timestamp = response.timestamp;
+    const newComment = {
+      name,
+      comment,
+      timestamp
+    };
+    validateInput(newComment);
+  }
+  resetInputs();
+  clearComments();
+  displayComments();
+
+});
+
+const resetInputs = () => {
+  userName.value = "";
+  commentText.value = "";
+};
 
 
-displayComments(comments);
+
+const clearComments = () => {
+  const commentSection = document.querySelector(".comment__bottom");
+  while (commentSection.firstChild) {
+    commentSection.removeChild(commentSection.lastChild);
+  }
+};
+
+const validateInput = (obj) => {
+  if (obj.name === "" && obj.txt === "") {
+    userName.classList.add("comment__input--error");
+    commentText.classList.add("comment__txt-area--error");
+  } else if (obj.name === "") {
+    userName.classList.add("comment__input--error");
+    commentText.classList.remove("comment__txt-area--error");
+  } else if (!isNaN(obj.name)) {
+    userName.classList.add("comment__input--error");
+    commentText.classList.remove("comment__txt-area--error");
+  } else if (obj.txt === "") {
+    commentText.classList.add("comment__txt-area--error");
+    userName.classList.remove("comment__input--error");
+  } else {
+    userName.classList.remove("comment__input--error");
+    commentText.classList.remove("comment__txt-area--error");
+    userName.classList.add("comment__input--active");
+    commentText.classList.add("comment__txt-area--active");
+    comments.unshift(obj);
+  }
+};
 
 
-// const form = document.querySelector(".comment__form");
-// form.addEventListener("submit", (commentObj) => {
-//   commentObj.preventDefault();
-//   let newComment = {};
-//   newComment.name = commentObj.target.name.value;
-//   newComment.timestamp = Date.now();
-//   newComment.txt = commentObj.target.comment.value;
-
-//   validateInput(newComment);
-//   resetInputs();
-//   clearComments();
-//   displayComments();
-// });
-
-// const resetInputs = () => {
-//   userName.value = "";
-//   commentText.value = "";
-// };
-
-
-
-// const clearComments = () => {
-//   const commentSection = document.querySelector(".comment__bottom");
-//   while (commentSection.firstChild) {
-//     commentSection.removeChild(commentSection.lastChild);
-//   }
-// };
-
-// const validateInput = (obj) => {
-//   if (obj.name === "" && obj.txt === "") {
-//     userName.classList.add("comment__input--error");
-//     commentText.classList.add("comment__txt-area--error");
-//   } else if (obj.name === "") {
-//     userName.classList.add("comment__input--error");
-//     commentText.classList.remove("comment__txt-area--error");
-//   } else if (!isNaN(obj.name)) {
-//     userName.classList.add("comment__input--error");
-//     commentText.classList.remove("comment__txt-area--error");
-//   } else if (obj.txt === "") {
-//     commentText.classList.add("comment__txt-area--error");
-//     userName.classList.remove("comment__input--error");
-//   } else {
-//     userName.classList.remove("comment__input--error");
-//     commentText.classList.remove("comment__txt-area--error");
-//     userName.classList.add("comment__input--active");
-//     commentText.classList.add("comment__txt-area--active");
-//     commentsArr.unshift(obj);
-//   }
-// };
+displayComments();
