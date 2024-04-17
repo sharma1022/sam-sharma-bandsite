@@ -116,6 +116,14 @@ const displayComments = () => {
     deleteButton.innerHTML = "Delete";
 
     buttonsContainer.append(likeButton,deleteButton);
+
+    likeButton.addEventListener("click", async (e) =>{
+      e.preventDefault();
+      const commentId = comment.id;
+
+      const response = await api.likeComment(commentId);
+      likeButton.innerHTML = `Likes: ${response.likes}`;
+    })
   });
 };
 
@@ -129,7 +137,7 @@ form.addEventListener("submit", async (e) => {
   const comment = commentText.value;
 
   if(name && comment){
-    const response =await api.postComment({name, comment});
+    const response = await api.postComment({name, comment});
     const timestamp = response.timestamp;
     const newComment = {
       name,

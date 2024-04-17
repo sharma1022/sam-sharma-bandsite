@@ -35,4 +35,14 @@ export class BandSiteApi{
             console.log(e);
         }
     }
+
+    async likeComment(commentId){
+        try{
+            const response = await axios.put(`${this.baseUrl}comments/${commentId}/like?api_key=${this.apiKey}`);
+            console.log(response.data);
+            return response.data;
+        } catch(e){
+            console.log(e);
+        }
+    }
 }
