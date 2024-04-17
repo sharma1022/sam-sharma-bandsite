@@ -492,6 +492,10 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.comment__bottom-right-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
 .comment__name {
   font-size: 0.875rem;
   line-height: 1.375rem;

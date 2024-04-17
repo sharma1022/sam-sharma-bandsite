@@ -102,10 +102,21 @@ const displayComments = () => {
     txt.classList.add("comment__text");
     rightSection.appendChild(txt);
     txt.innerHTML = comment.comment;
+
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.add("comment__bottom-right-buttons-container");
+    rightSection.appendChild(buttonsContainer);
+
+    const likeButton = document.createElement("button");
+    likeButton.classList.add("comment__like-button");
+    likeButton.innerHTML = `Likes: ${comment.likes}`;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("comment__delete-button");
+    deleteButton.innerHTML = "Delete";
+
+    buttonsContainer.append(likeButton,deleteButton);
   });
-  comments.sort((a,b) => {
-    b.timestamp - a.timestamp;
-})
 };
 
 
