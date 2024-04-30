@@ -8,6 +8,7 @@ export class BandSiteApi{
         try{
             const response = await axios.get(`${this.baseUrl}comments?api_key=${this.apiKey}`);
             const comments = response.data;
+            comments.sort((a,b) => b.timestamp - a.timestamp)
             return comments;
         } catch(e){
             console.log(e);
@@ -39,6 +40,16 @@ export class BandSiteApi{
     async likeComment(commentId){
         try{
             const response = await axios.put(`${this.baseUrl}comments/${commentId}/like?api_key=${this.apiKey}`);
+            console.log(response.data);
+            return response.data;
+        } catch(e){
+            console.log(e);
+        }
+    }
+
+    async deleteComment(commentId){
+        try{
+            const response = await axios.delete(`${this.baseUrl}comments/${commentId}/?api_key=${this.apiKey}`);
             console.log(response.data);
             return response.data;
         } catch(e){

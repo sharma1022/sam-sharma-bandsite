@@ -1,24 +1,6 @@
 import {BandSiteApi} from "./band-site-api.js";
 
-// const commentsArr = [
-//   {
-//     name: "Victor Pinto",
-//     timestamp: Date.parse("11/02/2023"),
-//     txt: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     name: "Christina Cabrera",
-//     timestamp: Date.parse("10/28/2023"),
-//     txt: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     name: "Isaac Tadesse",
-//     timestamp: Date.parse("10/20/2023"),
-//     txt: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
-
-const api_key = "58ea0e78-00f1-4e80-a261-702cce710763";
+const api_key = "2affb33f-5741-4380-a1e7-26ca1d973f88";
 const api = new BandSiteApi(api_key);
 
 const comments = await api.getComments();
@@ -61,13 +43,12 @@ const timeSince = (date) => {
   if (interval > 1) {
     return Math.floor(interval) + " minutes ago";
   }
-  return Math.floor(seconds) + " seconds ago";
+  return Math.floor(seconds+1) + " seconds ago";
 };
 
-const displayComments = () => {
+const displayComment = (comment) => {
   const commentSection = document.querySelector(".comment__bottom");
 
-  comments.forEach((comment) => {
     const commentContainer = document.createElement("div");
     commentContainer.classList.add("comment__bottom-container");
     commentSection.appendChild(commentContainer);
@@ -96,7 +77,8 @@ const displayComments = () => {
     const date = document.createElement("p");
     date.classList.add("comment__date");
     rightContainer.appendChild(date);
-    date.innerText = timeSince(comment.timestamp);
+    const timestamp = new Date(comment.timestamp);
+    date.innerText = timeSince(timestamp);
 
     const txt = document.createElement("p");
     txt.classList.add("comment__text");
@@ -106,28 +88,50 @@ const displayComments = () => {
     const buttonsContainer = document.createElement("div");
     buttonsContainer.classList.add("comment__bottom-right-buttons-container");
     rightSection.appendChild(buttonsContainer);
+    
+    const likeContainer = document.createElement("div");
+    likeContainer.classList.add("comment__like-container");
 
-    const likeButton = document.createElement("button");
+    const likeButton = document.createElement("img");
     likeButton.classList.add("comment__like-button");
-    likeButton.innerHTML = `Likes: ${comment.likes}`;
+    likeButton.setAttribute("src", "./assets/icons/SVG/icon-like.svg");
+    likeButton.setAttribute("alt", "Like Icon");
+    likeButton.setAttribute("title", "Like Comment");
+    
+    const likeCount = document.createElement('p');
+    likeCount.classList.add("comment__like-txt");
+    likeCount.innerHTML = `&nbsp ${comment.likes}`;
 
-    const deleteButton = document.createElement("button");
+    likeContainer.append(likeButton,likeCount);
+
+    const deleteButton = document.createElement("img");
     deleteButton.classList.add("comment__delete-button");
-    deleteButton.innerHTML = "Delete";
+    deleteButton.setAttribute("src", "./assets/icons/SVG/icon-delete.svg");
+    deleteButton.setAttribute("alt", "Like Icon");
+    deleteButton.setAttribute("title", "Delete Comment");
 
-    buttonsContainer.append(likeButton,deleteButton);
+    buttonsContainer.append(likeContainer,deleteButton);
 
     likeButton.addEventListener("click", async (e) =>{
       e.preventDefault();
       const commentId = comment.id;
+      await api.likeComment(commentId).then(api.getComments());
+      location.reload();
+    });
 
-      const response = await api.likeComment(commentId);
-      likeButton.innerHTML = `Likes: ${response.likes}`;
+    deleteButton.addEventListener("click", async (e)=>{
+      const commentId = comment.id;
+      const confirmation = confirm("Are you sure you want to delete the comment?");
+      if(confirmation == true){
+        await api.deleteComment(commentId);
+        location.reload();
+      }
     })
-  });
 };
 
-
+const displayComments = commentArr => {
+  commentArr.forEach(displayComment);
+}
 
 const form = document.querySelector(".comment__form");
 form.addEventListener("submit", async (e) => {
@@ -139,16 +143,18 @@ form.addEventListener("submit", async (e) => {
   if(name && comment){
     const response = await api.postComment({name, comment});
     const timestamp = response.timestamp;
+    const likes = 0;
     const newComment = {
       name,
       comment,
-      timestamp
+      timestamp,
+      likes
     };
     validateInput(newComment);
   }
   resetInputs();
   clearComments();
-  displayComments();
+  displayComments(comments);
 
 });
 
@@ -157,7 +163,7 @@ const resetInputs = () => {
   commentText.value = "";
 };
 
-const clearComments = () => {
+const clearComments = async () => {
   const commentSection = document.querySelector(".comment__bottom");
   while (commentSection.firstChild) {
     commentSection.removeChild(commentSection.lastChild);
@@ -185,5 +191,5 @@ const validateInput = (obj) => {
     comments.unshift(obj);
   }
 };
+displayComments(comments);
 
-displayComments();
