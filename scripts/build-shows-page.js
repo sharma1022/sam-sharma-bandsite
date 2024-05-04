@@ -1,4 +1,4 @@
-import {BandSiteApi} from "./band-site-api.js";
+import { BandSiteApi } from "./band-site-api.js";
 
 const api_key = "58ea0e78-00f1-4e80-a261-702cce710763";
 const api = new BandSiteApi(api_key);
@@ -7,10 +7,15 @@ const showsData = await api.getShows();
 
 const timestampToDate = (timestamp) => {
   const date = new Date(timestamp);
-  const options = {weekday: 'short', month: 'short',day: '2-digit', year: 'numeric'};
+  const options = {
+    weekday: "short",
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  };
 
-  return date.toLocaleDateString('en-US', options).replace(",","");
-}
+  return date.toLocaleDateString("en-US", options).replace(",", "");
+};
 
 const labels = ["Date", "Venue", "Location"];
 
